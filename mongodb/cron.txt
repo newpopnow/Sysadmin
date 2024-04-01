@@ -1,0 +1,7 @@
+# remember to set correct timezone
+# timedatectl set-timezone Asia/Ho_Chi_Minh
+
+# apply: crontab cron.txt
+# verify: crontab -l
+0 0 * * * TZ=Asia/Ho_Chi_Minh /home/ubuntu/scripts/db_backup.sh
+0 2 * * * TZ=Asia/Ho_Chi_Minh /home/ubuntu/scripts/sync_backup_s3.sh

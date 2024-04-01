@@ -1,0 +1,17 @@
+version: '3.4'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+######### Temp DB (I want to separate it, each db for each service, leave it here for now)
+  ecrmsdb:
+    container_name: ECRMS_DB_prd
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      - backend
+    volumes:
+      - /home/ubuntu/mongo:/data/db
